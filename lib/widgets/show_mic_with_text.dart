@@ -79,7 +79,6 @@ class ShowMicWithText extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
           ],
         ),
         if (shouldShowText)
