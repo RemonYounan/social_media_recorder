@@ -16,6 +16,7 @@ class ShowMicWithText extends StatelessWidget {
   final Color? counterBackGroundColor;
   final double fullRecordPackageHeight;
   final double initRecordPackageWidth;
+  final BorderRadius? borderRadius;
 
   // ignore: sort_constructors_first
   ShowMicWithText({
@@ -29,6 +30,7 @@ class ShowMicWithText extends StatelessWidget {
     required this.slideToCancelText,
     required this.recordIcon,
     required this.counterBackGroundColor,
+    required this.borderRadius,
   }) : super(key: key);
   final colorizeColors = [
     Colors.black,
@@ -54,13 +56,13 @@ class ShowMicWithText extends StatelessWidget {
               key: soundRecorderState.key,
               scale: soundRecorderState.buttonPressed ? 1.3 : 1,
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(600),
+                borderRadius: borderRadius ?? BorderRadius.circular(600),
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 200),
                   curve: Curves.easeIn,
                   width: soundRecorderState.buttonPressed
                       ? fullRecordPackageHeight
-                      : initRecordPackageWidth - 5,
+                      : initRecordPackageWidth,
                   height: fullRecordPackageHeight,
                   child: Container(
                     color: (soundRecorderState.buttonPressed)
@@ -75,10 +77,10 @@ class ShowMicWithText extends StatelessWidget {
                               ? Colors.grey.shade200
                               : Colors.black,
                         ),
-                    ),
                   ),
                 ),
               ),
+            ),
           ],
         ),
         if (shouldShowText)

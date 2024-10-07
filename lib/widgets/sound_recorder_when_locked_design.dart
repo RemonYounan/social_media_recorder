@@ -59,7 +59,7 @@ class SoundRecorderWhenLockedDesign extends StatelessWidget {
                 soundRecordNotifier.finishRecording();
               },
               child: Transform.scale(
-                scale: 1.2,
+                scale: 1,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(600),
                   child: AnimatedContainer(
@@ -69,19 +69,16 @@ class SoundRecorderWhenLockedDesign extends StatelessWidget {
                     height: fullRecordPackageHeight,
                     child: Container(
                       color: recordIconWhenLockBackGroundColor,
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: recordIconWhenLockedRecord ??
-                            sendButtonIcon ??
-                            Icon(
-                              Icons.send,
-                              textDirection: TextDirection.ltr,
-                              size: 28,
-                              color: (soundRecordNotifier.buttonPressed)
-                                  ? Colors.grey.shade200
-                                  : Colors.black,
-                            ),
-                      ),
+                      child: recordIconWhenLockedRecord ??
+                          sendButtonIcon ??
+                          Icon(
+                            Icons.send,
+                            textDirection: TextDirection.ltr,
+                            size: 28,
+                            color: (soundRecordNotifier.buttonPressed)
+                                ? Colors.grey.shade200
+                                : Colors.black,
+                          ),
                     ),
                   ),
                 ),

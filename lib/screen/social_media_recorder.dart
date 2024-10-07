@@ -247,6 +247,7 @@ class _SocialMediaRecorder extends State<SocialMediaRecorder> {
                           soundRecorderState: state,
                           slideToCancelTextStyle: widget.slideToCancelTextStyle,
                           slideToCancelText: widget.slideToCancelText,
+                          borderRadius: widget.radius,
                         ),
                       ),
                       if (soundRecordNotifier.isShow)
